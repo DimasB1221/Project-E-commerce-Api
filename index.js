@@ -13,6 +13,10 @@ app.use(express.json());
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes); // Semua routes user di awali dengan /api/users
 
+// Import route product (New)
+const productRoutes = require('./routes/productRoutes');
+app.use('/api/products', productRoutes); // Semua routes product di awali dengan /api/products 
+
 // Route dasar (cek server)
 app.get('/',(req,res) => {
     res.send('Selamat datang di Project belajar api user saya');
