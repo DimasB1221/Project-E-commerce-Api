@@ -19,7 +19,7 @@ app.use('/api/products', productRoutes); // Semua routes product di awali dengan
 
 // Route dasar (cek server)
 app.get('/',(req,res) => {
-    res.send('Selamat datang di Project belajar api user saya');
+    res.send('Selamat datang di Project belajar api saya');
 });
 
 // Jalankan server

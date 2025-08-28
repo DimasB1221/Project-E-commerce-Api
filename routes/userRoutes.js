@@ -47,8 +47,16 @@ router.put('/:id',(req,res) => {
 
 // DELETE /api/users/:id → hapus user
 router.delete('/:id',(req,res) => {
-    users.filter(u => u.id !== parseInt(req.params.id));
-    res.json({message: 'User berhasil dihapus'});
+    const user = users.find(u => u.id === parseInt(req.params.id));
+
+    if (!user) {
+        return res.status(404).json({ message: 'User tidak ditemukan' });
+    }
+
+    // update data users
+    users = users.filter(u => u.id !== parseInt(req.params.id));
+
+    res.json({ message: 'User berhasil dihapus'});
 });
 
 module.exports = router;
