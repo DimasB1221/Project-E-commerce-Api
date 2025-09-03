@@ -28,3 +28,4 @@ app.listen(PORT, () => {
 });
 
 // Coba git pull request dan merge branch
+console.log(15 === 15.0);
