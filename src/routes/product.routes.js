@@ -1,6 +1,10 @@
 import { Router } from "express";
 import {
-  createProduct, listProducts, getProduct, updateProduct, deleteProduct
+  createProduct,
+  listProducts,
+  getProduct,
+  updateProduct,
+  deleteProduct,
 } from "../controllers/product.controller.js";
 import { protect, authorize } from "../middleware/auth.js";
 

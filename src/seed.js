@@ -1,23 +1,24 @@
 /**
  * seed.js
- * 
+ *
  * File ini digunakan untuk mengisi data awal ke database.
  * Misalnya: buat akun admin default dan beberapa produk contoh.
  */
 
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-const bcrypt = require("bcryptjs");
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import bcrypt from "bcrypt";
 
 // Import model
-const User = require("./models/User");
-const Product = require("./models/Product");
+import User from "./models/User.js";
+import Product from "./models/Product.js";
 
 // Load .env
 dotenv.config();
 
 // Koneksi ke database
-mongoose.connect(process.env.MONGO_URI)
+mongoose
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected for seeding..."))
   .catch((err) => console.error(err));
 
@@ -27,27 +28,27 @@ const seedUsers = [
     name: "Admin User",
     email: "admin@test.com",
     password: "123456", // nanti di-hash
-    role: "admin"
+    role: "admin",
   },
   {
     name: "Normal User",
     email: "user@test.com",
     password: "123456",
-    role: "user"
-  }
+    role: "user",
+  },
 ];
 
 const seedProducts = [
   {
     name: "Laptop Gaming",
     price: 15000000,
-    stock: 5
+    stock: 5,
   },
   {
     name: "Keyboard Mechanical",
     price: 750000,
-    stock: 20
-  }
+    stock: 20,
+  },
 ];
 
 // Fungsi seeding
